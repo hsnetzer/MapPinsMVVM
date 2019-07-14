@@ -11,12 +11,12 @@
 		4A72C48622DB80C300E4A717 /* PinModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A72C48322DB80C300E4A717 /* PinModel.swift */; };
 		4A72C48722DB80C300E4A717 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A72C48422DB80C300E4A717 /* ListViewModel.swift */; };
 		4A72C48822DB80C300E4A717 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A72C48522DB80C300E4A717 /* MapViewModel.swift */; };
+		4A72C48A22DBBDF200E4A717 /* SwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A72C48922DBBDF200E4A717 /* SwiftTests.swift */; };
 		4ACF0A7322DB6B4D002FC0CF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACF0A7222DB6B4D002FC0CF /* AppDelegate.m */; };
 		4ACF0A7C22DB6B4D002FC0CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4ACF0A7A22DB6B4D002FC0CF /* Main.storyboard */; };
 		4ACF0A7E22DB6B4F002FC0CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4ACF0A7D22DB6B4F002FC0CF /* Assets.xcassets */; };
 		4ACF0A8122DB6B4F002FC0CF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4ACF0A7F22DB6B4F002FC0CF /* LaunchScreen.storyboard */; };
 		4ACF0A8422DB6B4F002FC0CF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACF0A8322DB6B4F002FC0CF /* main.m */; };
-		4ACF0A8E22DB6B4F002FC0CF /* MapPinsMVVMTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACF0A8D22DB6B4F002FC0CF /* MapPinsMVVMTests.m */; };
 		4ACF0A9A22DB6C1C002FC0CF /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACF0A9922DB6C1C002FC0CF /* ListViewController.m */; };
 		4ACF0A9D22DB6C5A002FC0CF /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACF0A9C22DB6C5A002FC0CF /* MapViewController.m */; };
 		4ACF0AA222DB6CFA002FC0CF /* PinCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ACF0AA122DB6CFA002FC0CF /* PinCell.swift */; };
@@ -38,6 +38,7 @@
 		4A72C48322DB80C300E4A717 /* PinModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinModel.swift; sourceTree = "<group>"; };
 		4A72C48422DB80C300E4A717 /* ListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 		4A72C48522DB80C300E4A717 /* MapViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
+		4A72C48922DBBDF200E4A717 /* SwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftTests.swift; sourceTree = "<group>"; };
 		4ACF0A6E22DB6B4D002FC0CF /* MapPinsMVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapPinsMVVM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4ACF0A7122DB6B4D002FC0CF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4ACF0A7222DB6B4D002FC0CF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -47,7 +48,6 @@
 		4ACF0A8222DB6B4F002FC0CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4ACF0A8322DB6B4F002FC0CF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4ACF0A8922DB6B4F002FC0CF /* MapPinsMVVMTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MapPinsMVVMTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4ACF0A8D22DB6B4F002FC0CF /* MapPinsMVVMTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapPinsMVVMTests.m; sourceTree = "<group>"; };
 		4ACF0A8F22DB6B4F002FC0CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4ACF0A9822DB6C1C002FC0CF /* ListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ListViewController.h; sourceTree = "<group>"; };
 		4ACF0A9922DB6C1C002FC0CF /* ListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ListViewController.m; sourceTree = "<group>"; };
@@ -137,7 +137,7 @@
 		4ACF0A8C22DB6B4F002FC0CF /* MapPinsMVVMTests */ = {
 			isa = PBXGroup;
 			children = (
-				4ACF0A8D22DB6B4F002FC0CF /* MapPinsMVVMTests.m */,
+				4A72C48922DBBDF200E4A717 /* SwiftTests.swift */,
 				4ACF0A8F22DB6B4F002FC0CF /* Info.plist */,
 			);
 			path = MapPinsMVVMTests;
@@ -208,6 +208,7 @@
 					};
 					4ACF0A8822DB6B4F002FC0CF = {
 						CreatedOnToolsVersion = 10.2.1;
+						LastSwiftMigration = 1020;
 						TestTargetID = 4ACF0A6D22DB6B4D002FC0CF;
 					};
 				};
@@ -335,7 +336,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4ACF0A8E22DB6B4F002FC0CF /* MapPinsMVVMTests.m in Sources */,
+				4A72C48A22DBBDF200E4A717 /* SwiftTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -534,6 +535,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MN96UHKWYU;
 				INFOPLIST_FILE = MapPinsMVVMTests/Info.plist;
@@ -543,7 +545,10 @@
 					"@loader_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.trailmagick.MapPinsMVVMTests;
+				PRODUCT_MODULE_NAME = MapPinsMVVMTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MapPinsMVVM.app/MapPinsMVVM";
 			};
@@ -555,6 +560,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MN96UHKWYU;
 				INFOPLIST_FILE = MapPinsMVVMTests/Info.plist;
@@ -564,7 +570,9 @@
 					"@loader_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.trailmagick.MapPinsMVVMTests;
+				PRODUCT_MODULE_NAME = MapPinsMVVMTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MapPinsMVVM.app/MapPinsMVVM";
 			};

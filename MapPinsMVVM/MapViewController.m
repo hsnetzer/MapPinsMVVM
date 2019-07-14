@@ -37,6 +37,7 @@
                                                object:nil];
 }
 
+// delete annotation whose title matches the title of the last pin deleted
 - (void)pinWasDeleted {
     NSArray *annotations = [_mapView annotations];
     NSString *toDelete = [_viewModel lastRemovedPinName];
@@ -50,12 +51,17 @@
 }
 
 - (void)displayPins {
+    [_mapView removeAnnotations:[_mapView annotations]]; // remove all old annotations
     [_mapView addAnnotations:[_viewModel makeAnnotations]];
 }
 
 - (BOOL)mapView:(MGLMapView *)mapView annotationCanShowCallout:(id<MGLAnnotation>)annotation {
     // Always allow callouts to popup when annotations are tapped.
     return YES;
+}
+
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 @end

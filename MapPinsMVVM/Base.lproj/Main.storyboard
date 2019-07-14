@@ -64,21 +64,31 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="69.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="descLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rhi-ab-WpQ">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="descLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rhi-ab-WpQ">
                                             <rect key="frame" x="20" y="38" width="79" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="nameLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hmD-YO-409">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="nameLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hmD-YO-409">
                                             <rect key="frame" x="20" y="11" width="84" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="Hac-7P-sR1"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Rhi-ab-WpQ" firstAttribute="leading" secondItem="co4-GS-laL" secondAttribute="leading" constant="20" id="0SN-S3-CbB"/>
+                                        <constraint firstItem="hmD-YO-409" firstAttribute="leading" secondItem="co4-GS-laL" secondAttribute="leading" constant="20" id="4UU-UT-BwW"/>
+                                        <constraint firstItem="hmD-YO-409" firstAttribute="top" secondItem="co4-GS-laL" secondAttribute="top" constant="11" id="AKf-I6-kQG"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Rhi-ab-WpQ" secondAttribute="trailing" constant="20" symbolic="YES" id="FMs-jt-9II"/>
+                                        <constraint firstAttribute="bottom" secondItem="Rhi-ab-WpQ" secondAttribute="bottom" constant="10.5" id="Wjk-PE-PuK"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="hmD-YO-409" secondAttribute="trailing" constant="20" symbolic="YES" id="o6k-92-ipy"/>
+                                        <constraint firstItem="Rhi-ab-WpQ" firstAttribute="top" secondItem="hmD-YO-409" secondAttribute="bottom" constant="6" id="qNe-hY-pw5"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="descLabel" destination="Rhi-ab-WpQ" id="gTJ-YI-wEP"/>
