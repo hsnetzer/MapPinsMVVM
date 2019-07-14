@@ -28,10 +28,12 @@
                                                object:nil];
 }
 
+// called when pins download, and on viewDidLoad
 - (void)displayPins {
     [self.tableView reloadData];
 }
 
+// refresh button on navigation bar
 - (IBAction)resetPins:(UIBarButtonItem *)sender {
     [_viewModel resetPins];
 }

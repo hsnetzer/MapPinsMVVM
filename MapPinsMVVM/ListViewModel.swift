@@ -15,6 +15,7 @@ import Foundation
         self.pinModel = pinModel
     }
     
+    // configure a table view cell
     public func configure(cell: PinCell, forIndexPath: IndexPath) {
         let pin = pinModel.pins[forIndexPath.row]
         cell.nameLabel.text = pin.name
@@ -25,10 +26,12 @@ import Foundation
         return pinModel.pins.count
     }
     
+    // called when user deletes a row from the tableview
     @discardableResult public func deleteRowAt(indexPath: IndexPath) -> Pin? {
         return pinModel.removePinAt(indexPath: indexPath)
     }
     
+    // called when user fetches pins from the server
     public func resetPins() {
         pinModel.downloadPins()
     }

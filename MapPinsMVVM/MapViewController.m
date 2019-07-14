@@ -16,6 +16,7 @@
 
 @implementation MapViewController
 
+// refresh button on navigation bar
 - (IBAction)resetPins:(UIBarButtonItem *)sender {
     [_viewModel resetPins];
 }
@@ -25,7 +26,7 @@
     
     [self displayPins];
     
-    [_mapView setDelegate:self];
+    [_mapView setDelegate:self]; // for clickable pins
     
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(displayPins)
@@ -50,13 +51,15 @@
     
 }
 
+// called when pins download, and on viewDidLoad
 - (void)displayPins {
     [_mapView removeAnnotations:[_mapView annotations]]; // remove all old annotations
     [_mapView addAnnotations:[_viewModel makeAnnotations]];
 }
 
+
+// delegate method lets map view display popup when you click pins
 - (BOOL)mapView:(MGLMapView *)mapView annotationCanShowCallout:(id<MGLAnnotation>)annotation {
-    // Always allow callouts to popup when annotations are tapped.
     return YES;
 }
 

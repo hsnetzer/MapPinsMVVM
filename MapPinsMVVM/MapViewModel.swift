@@ -16,6 +16,7 @@ import Mapbox
         self.pinModel = pinModel
     }
     
+    // creates MGLPointAnnotations from the model
     public func makeAnnotations() -> [MGLPointAnnotation] {
         return pinModel.pins.map { pin in
             let annotation = MGLPointAnnotation()
@@ -26,10 +27,12 @@ import Mapbox
         }
     }
     
+    // so the map knows which pin to remove when the user deletes a row from the list view
     public func lastRemovedPinName() -> String? {
         return pinModel.lastRemoved?.name
     }
     
+    // called when the user refreshes the pins from the server
     public func resetPins() {
         pinModel.downloadPins()
     }

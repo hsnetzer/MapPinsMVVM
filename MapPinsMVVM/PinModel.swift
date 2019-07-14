@@ -2,6 +2,8 @@
 //  PinModel.swift
 //  MapPinsMVVM
 //
+//  PinModel is the data source for the app. It conforms to PinModelProtocol to satisfy the needs to the view models of the app. 
+//
 //  Created by Harry Netzer on 7/11/19.
 //  Copyright © 2019 Big Hike. All rights reserved.
 //
@@ -10,30 +12,32 @@ import Foundation
 
 public class PinModel: NSObject, PinModelProtocol {
     public var pins: [Pin] = []
-    public var lastRemoved: Pin? = nil
+    public var lastRemoved: Pin? = nil // for the mapview to know what pin was removed
     
     public override init() {
         super.init()
         
-        if let pins = PinModel.pinsFromBundle() {
-            print("got pins from bundle")
+        if let pins = PinModel.pinsFromArchive() { // first try to open pins from saved archive
             self.pins = pins
         } else {
             downloadPins()
         }
     }
     
+    // called when pins finish downloading
     func pinsDidDownload(_ pins: [Pin]) {
         self.pins = pins
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "pinsDidDownload"), object: nil)
     }
     
+    // called by the ListViewModel when it removes a pin from the list
     public func removePinAt(indexPath: IndexPath) -> Pin? {
         lastRemoved = pins.remove(at: indexPath.row)
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "pinWasDeleted"), object: nil)
         return lastRemoved
     }
     
+    // fetch pins from server
     public func downloadPins() {
         let sesh = URLSession(configuration: .ephemeral)
         let url = URL(string: "https://annetog.gotenna.com/development/scripts/get_map_pins.php")!
@@ -55,7 +59,7 @@ public class PinModel: NSObject, PinModelProtocol {
     }
     
     // deserialize pins array from json archive
-    static func pinsFromBundle() -> [Pin]? {
+    static func pinsFromArchive() -> [Pin]? {
         guard let jsonPath = try? FileManager.default
             .url(for: .libraryDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
             .appendingPathComponent("pins.json") else { return nil }
@@ -95,7 +99,6 @@ public class PinModel: NSObject, PinModelProtocol {
     
     func removePinAt(indexPath: IndexPath) -> Pin?
     func downloadPins()
-    
 }
 
 public class Pin: NSObject, Codable {
@@ -105,6 +108,7 @@ public class Pin: NSObject, Codable {
     let longitude: Double
     let desc: String
     
+    // needed because NSObject has a property called "description"
     enum CodingKeys: String, CodingKey {
         case id
         case name

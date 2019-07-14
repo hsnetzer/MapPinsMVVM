@@ -20,8 +20,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    // create a model
     _model = [[PinModel alloc] init];
     
+    // create view models which depend on the model and add them to the view controllers
     UITabBarController *tabController = (UITabBarController*) [_window rootViewController];
     NSArray *viewControllers = [tabController viewControllers];
     
