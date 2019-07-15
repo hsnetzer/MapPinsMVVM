@@ -22,6 +22,7 @@
     
     [self displayPins];
     
+    // listen for when the pins download
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(displayPins)
                                                  name:@"pinsDidDownload"
@@ -53,8 +54,11 @@
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    // allow deleting rows
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         [_viewModel deleteRowAtIndexPath:indexPath];
+        
+        // remove row from tableview
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationLeft];
     }
 }

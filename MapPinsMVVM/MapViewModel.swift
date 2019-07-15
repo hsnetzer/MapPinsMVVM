@@ -27,7 +27,7 @@ import Mapbox
         }
     }
     
-    // so the map knows which pin to remove when the user deletes a row from the list view
+    // so the map knows which pin was the last removed
     public func lastRemovedPinName() -> String? {
         return pinModel.lastRemoved?.name
     }

@@ -24,15 +24,17 @@
     // create a model
     _model = [[PinModel alloc] init];
     
-    // create view models which depend on the model and add them to the view controllers
+    // get view controllers from the tab bar
     UITabBarController *tabController = (UITabBarController*) [_window rootViewController];
     NSArray *viewControllers = [tabController viewControllers];
     
+    // assign view model to list view
     UINavigationController *listNavController = viewControllers[1];
     ListViewController *listViewController = (ListViewController*) [listNavController topViewController];
     ListViewModel *listViewModel = [[ListViewModel alloc] initWithPinModel:_model];
     [listViewController setViewModel: listViewModel];
     
+    // assign view model to map view
     UINavigationController *mapNavController = viewControllers[0];
     MapViewController *mapViewController = (MapViewController*) [mapNavController topViewController];
     MapViewModel *mapViewModel = [[MapViewModel alloc] initWithPinModel:_model];

@@ -31,10 +31,9 @@ public class PinModel: NSObject, PinModelProtocol {
     }
     
     // called by the ListViewModel when it removes a pin from the list
-    public func removePinAt(indexPath: IndexPath) -> Pin? {
+    public func removePinAt(indexPath: IndexPath) {
         lastRemoved = pins.remove(at: indexPath.row)
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "pinWasDeleted"), object: nil)
-        return lastRemoved
     }
     
     // fetch pins from server
@@ -97,7 +96,7 @@ public class PinModel: NSObject, PinModelProtocol {
     var pins: [Pin] { get }
     var lastRemoved: Pin? { get }
     
-    func removePinAt(indexPath: IndexPath) -> Pin?
+    func removePinAt(indexPath: IndexPath)
     func downloadPins()
 }
 

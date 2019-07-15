@@ -8,6 +8,7 @@
 
 import Foundation
 
+// view model for the uitableviewcontroller
 @objcMembers public class ListViewModel: NSObject {
     let pinModel: PinModelProtocol
     
@@ -22,13 +23,14 @@ import Foundation
         cell.descLabel.text = pin.desc
     }
     
+    // number of rows in the tableview
     public func countRows() -> Int {
         return pinModel.pins.count
     }
     
     // called when user deletes a row from the tableview
-    @discardableResult public func deleteRowAt(indexPath: IndexPath) -> Pin? {
-        return pinModel.removePinAt(indexPath: indexPath)
+    public func deleteRowAt(indexPath: IndexPath) {
+        pinModel.removePinAt(indexPath: indexPath)
     }
     
     // called when user fetches pins from the server
