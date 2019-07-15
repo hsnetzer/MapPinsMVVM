@@ -2,7 +2,7 @@
 
 A UITabBarController-based app with MVVM architecture. The view models get their data from a shared model object which is instantiated in the app delegate. 
 
-Deleting a row from the table, for example, calls a method on its delegate (the view controller), which in turn calls a method on its view model, which then calls a method on the model. The model makes the appropriate change and sends a notification to the view controllers. The view controllers ask their view models for updated information when the notification comes through.
+Deleting a row from the table, for example, calls a method on its delegate (the tableview controller), which in turn calls a method on its view model, which then calls a method on the model. The model makes the appropriate change and sends a notification to the view controllers. The view controllers ask their view models for updated information when the notification comes through.
 
 Persistence store is serializing objects to .json archive.
 
